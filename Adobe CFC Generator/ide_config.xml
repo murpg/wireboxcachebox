@@ -1,0 +1,33 @@
+<application>
+	<name>Adobe CFC Generator</name>
+	<author>Adobe Systems Inc</author>
+	<version>Beta</version>
+	<description>Generate ColdFusion Components based on Database Tables</description>	
+	
+	<!-- Add menu contributions to RDS Data View -->	   
+    <menucontributions >
+		<contribution target="rdsview" >
+			<menu name="Adobe CFC Generator">
+				<action name="Create CFC" handlerid="startCRUD" showResponse="no">
+					<input name="location" default="" label="Enter destination" tooltip="Location where generated CFCs will be stored" type="projectdir" required="true"/>
+					<input name="generateService" label="Generate Service?" tooltip="Generate service to be consumed" type="boolean" checked="true"/>
+					<input name="scriptbased" label= "Script CFC?" type="boolean" checked ="true" />
+				</action>
+		    	<action name="Create ORM CFC" handlerid="ormCFCGenerator" showresponse="true">
+					<dialog height="350" width="500">
+						<input name="Location" label="Enter folder for CFC" tooltip="Location where generated CFCs will be stored" type="projectdir" required="true"/>
+						<input name="generateService" label="Generate Service?" tooltip="Generate service to be consumed" type="boolean" checked="true"/>
+						<input name="scriptbased" label= "Script CFC?" type="boolean" checked ="true" />
+					</dialog>
+				</action>			
+			</menu>
+		</contribution>
+    </menucontributions>	
+
+	<!-- Define Handlers-->
+	<handlers>		
+		<handler id="startCRUD" type="CFM" filename="cfcGen.cfm" />
+		<handler id="ormCFCGenerator" type="CFM" filename="ormCFCGenerator.cfm" />
+	</handlers>
+
+</application>

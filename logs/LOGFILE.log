@@ -1,0 +1,3 @@
+"Severity","Appender","Date","Time","Category","Message"
+"ERROR","LOGFILE","09/03/2013","21:43:01","wirebox.system.ioc.Injector","Requested instance:cachebox was not located in any declared scan location(s): model or full CFC path"
+"ERROR","LOGFILE","09/03/2013","21:45:08","wirebox.system.ioc.Injector","Requested instance:cachebox was not located in any declared scan location(s): model or full CFC path"

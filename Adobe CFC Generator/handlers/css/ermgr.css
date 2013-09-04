@@ -1,0 +1,281 @@
+@charset "utf-8";
+
+body 
+{
+	font-family: Tahoma, Geneva, sans-serif;
+	color: #5a5a5a;
+	margin:0;
+	padding:0;
+}
+
+.dbTable
+{
+	background-color:#F3F3F3;
+	border-radius: 8px;
+	width: 100%;
+	border-spacing: 1px;
+}
+
+.rowHighlight
+{
+	background-color:#bee9ff;
+}
+
+.tableDiv
+{
+	background-color: #F3F3F3;
+	border-color: #cccccc;
+	border-radius: 8px;
+	border-width: thin;
+	border-style:solid;
+	
+	-moz-box-shadow: 0 1px 10px #ff;
+	-webkit-box-shadow: 0 1px 10px#ff;
+	box-shadow: 0 1px 10px #ff;
+	overflow:auto;
+
+	padding: 0;
+	padding-bottom: 10px;
+	margin: 0;
+	
+	display: inline-table;
+	width: 150px;
+	height: 80px;
+	position:absolute;
+}
+
+#selectedRow
+{
+	background:#C36;
+}
+
+#msgDiv
+{
+	font-size:small;
+}
+
+.dbTableHeader
+{
+	color:#B4B4B4;
+	border-bottom-color:#e6e6e6;
+	border-bottom-style: solid;
+	border-bottom-width:thin;
+	width:500px;
+	font-size: 10pt;
+	height: 25px;
+	cursor:default;
+}
+
+.dbTalbeRow
+{
+	background-color: #FCFCFC;
+	
+	font-size: 10pt;
+	padding-left: 5px;
+	text-indent:10px;
+	cursor:default;
+	border-style:solid;
+	border-bottom-color:#999999;
+}
+
+.colSelect
+{
+	background-color: #FCFCFC;
+	
+	font-size: 10pt;
+	padding-left: 5px;
+	text-indent:10px;
+	cursor:default;
+	border-style:solid;
+	border-bottom-color:#999999;
+}
+
+.dbTalbeRow:hover
+{
+	background-color: #FFFFFF;
+}
+
+#toolTip
+{
+	background:#FFFFD4;
+	font-size:small;
+}
+
+#codeGenBtnDiv
+{
+	cursor:hand;
+	float: right;
+}
+
+#_header_ {
+	height:60px;
+	font-size:12pt;
+	background-color:#f0f0f0;
+	
+	position:relative;
+	width:100%;
+	
+	padding-left: 20px;
+	
+	overflow:hidden;
+}
+
+#_tables_ {
+	overflow:scroll;
+	position:relative;
+	top: 0px;
+}
+
+#_footer_ {
+	height:40px;
+	background-color:#f0f0f0;
+	position:relative;
+	padding: 10px;
+}
+
+#_status_ {
+	float:left;
+	font-size:smaller;
+}
+
+.tableEditorDlg
+{
+	font-size: small;
+	background-color:#f3f3f3;
+}
+
+#tableEditorSuperDiv
+{
+}
+
+.ui-dialog-titlebar
+{
+	background-color:#ff0000;
+}
+
+#tableEditorDiv
+{
+	background-color:#F3F3F3;
+	border-color: #cccccc;
+	border-radius: 8px;
+	border-width: thin;
+	border-style:solid;
+
+	-moz-box-shadow: 0 1px 10px #ff;
+	-webkit-box-shadow: 0 1px 10px#ff;
+	box-shadow: 0 1px 10px #ff;
+
+	padding: 0;
+	padding-bottom: 10px;
+	margin: 0;
+	
+	display: inline-table;
+	height: 80px;
+	float:left;
+	overflow:auto;
+	font-size: small;
+}
+
+#editorTable
+{
+	
+}
+
+#editorTableHeader
+{
+	color:#B4B4B4;
+	border-bottom-color:#e6e6e6;
+	border-bottom-style: solid;
+	border-bottom-width:thin;
+	width:500px;
+	font-size: 10pt;
+	height: 25px;
+	cursor:default;
+}
+
+.editorTableRow
+{
+	background-color: #FCFCFC;
+	
+	font-size: 10pt;
+	padding-left: 5px;
+	text-indent:10px;
+	cursor:default;
+	border-style:solid;
+	border-bottom-color:#999999;
+}
+
+.relEditDlg
+{
+	font-size: small;
+}
+
+.newLinkCondRow
+{
+	background-color:#E9EEFA;
+}
+
+.disabledCtrl
+{
+	background-color:#EFEFE7;
+}
+
+
+#joinCondDiv
+{
+
+	background-color:#F3F3F3;
+	border-color: #cccccc;
+	border-radius: 8px;
+	border-width: thin;
+	border-style:solid;
+
+	-moz-box-shadow: 0 1px 10px #ff;
+	-webkit-box-shadow: 0 1px 10px#ff;
+	box-shadow: 0 1px 10px #ff;
+
+	padding: 0;
+	padding-bottom: 10px;
+	margin: 0;
+
+	font-size: small;
+}
+
+.linkTableHeader
+{
+	color:#B4B4B4;
+	border-bottom-color:#e6e6e6;
+	border-bottom-style: solid;
+	border-bottom-width:thin;
+	width:500px;
+	font-size: 10pt;
+	height: 25px;
+	cursor:default;
+}
+
+.linkTableCondDel
+{
+	color:#ff0000;
+}
+
+.defaultCursor
+{
+	cursor:default;
+}
+
+#rearrangeBtnId
+{
+	float:right;
+}
+
+#_helpDlgDiv
+{
+	font-size:small;
+}
+
+.FKIndicator
+{
+	font-size:small;
+	float:right;
+	padding-right:5px;
+}

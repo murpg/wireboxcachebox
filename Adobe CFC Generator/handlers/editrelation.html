@@ -1,0 +1,85 @@
+<div class="tableRelEditDiv">
+	<table width="100%" id="tableRelations">
+		<tr>
+			<td><input type="checkbox" id="srcRelCheckBox"></input></td>
+			<td>
+				<fieldset id="srcRelGroup">
+					<legend id="srcRelLegend">Table1</legend>
+					<table id="srcRelTable">
+						<tr>
+							<td>
+								Relationship Name:
+							</td>
+							<td>
+								<input type="text" name="srcRelName"></input>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Multiplicity:
+							</td>
+							<td>
+								<select name="srcMultiplicityList">
+									<option value="1-1">1-1</option>
+									<option value="1-n">1-n</option>
+									<option value="n-1">n-1</option>
+									<option value="m-n">m-n</option>
+								</select>
+							</td>
+						</tr>
+					</table>
+				</fieldset>
+			</td>
+		</tr>
+		<tr>	
+			<td><input type="checkbox" id="targetRelCheckBox"></input></td>
+			<td>
+				<fieldset id="targetRelGroup">
+					<legend id="targetRelLegend">Table2</legend>
+					<table id="targetRelTable">
+						<tr>
+							<td>
+								Relationship Name:
+							</td>
+							<td>
+								<input type="text" name="targetRelationName"></input>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Multiplicity:
+							</td>
+							<td>
+								<select name="targetMultiplicityList">
+									<option value="1-1">1-1</option>
+									<option value="1-n">1-n</option>
+									<option value="n-1">n-1</option>
+									<option value="m-n">m-n</option>
+								</select>
+							</td>
+						</tr>
+					</table>
+				</fieldset>
+			</td>
+		</tr>
+	</table>
+	
+	<p></p>
+	<table>
+		<tr>
+			<td>Link Table</td>
+			<td><select name="linkTableList"></select></td>
+		</tr>
+	</table>
+	
+	<p></p>
+	<div id="joinCondDiv">
+		<table width="100%" id="linkTableDtlTable">
+			<tr class="linkTableHeader">
+				<th>Source Field</th>
+				<th>Target Field</th>
+				<th></th>
+			</tr>
+		</table>
+	</div>
+<div>

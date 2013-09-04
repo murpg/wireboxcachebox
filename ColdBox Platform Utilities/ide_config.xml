@@ -1,0 +1,282 @@
+<application>
+	<name>ColdBox Platform Utilities</name>
+	<author>Ortus Solutions, Corp</author>
+	<email>sanaullah73@gmail.com,info@coldbox.org</email>	
+	<description><![CDATA[
+		A ColdFusion Builder companion to help build ColdBox Platform applications.<br/><br/>
+		
+		Version 2.4 <br/>
+		#6 Ability to modify the builder settings.xml to add ColdBox variable mappings, requires IDE restart until CFBuilder 2.0 comes out.<br/>
+		#7 Updates to all application templates and handler templates<br/>
+		#8 Ability to generate implicit handler methods from editor context menu.<br/>
+		#9 Ability to generate implicit action methods from outline view by choosing the method action<br/>
+		
+		<hr/>
+		
+		Version 2.3 <br/>
+		 #1	update the module templates to conform to new 3.0.0 standards
+		 #2	Update the base ORM service templates to comply with standards
+		 #3	update wirebox DSL injections missing : on generation
+		 #4	Update application templates to conform to latest 3.0
+		
+		<hr/>
+		
+		Version 2.2 <br/>
+		- Application template fixes <br/>
+		
+		<hr/>
+		
+		Version 2.1 <br/>
+		- Application template updates to M6< br/>
+		- Small typos <br/>
+		
+		<hr />
+		
+		Version 2.0 <br/>
+		- Creation of virtual entity services <br/>
+		- Updated the ORM Event Handler for injector annotations< br/>
+		- New ORM Templated Services<br/>
+		- New ORM Virtual Entity Services <br/>
+		- New WireBox contributions: Property Injection< br/>
+		- New WireBox contributions: Setter Injection< br/>
+		
+		<hr />
+		
+		Version 1.9 <br/>
+		- Some menu refactorings<br/>
+		- Addition of a new resources menu for live search, help and live API docs.<br/>
+		- New creation of ORM Event Handler<br/>
+		<hr />
+		
+		Version 1.8 <br/>
+		- Update to application templates<br/>
+		- Update to code generation templates with some fixes<br/>
+		- Generation of ColdBox Integration tests<br/>
+		- Fixes for security generator <br/>
+		- New menu contribution: ColdBox ForgeBox <br/>
+		<hr />
+		
+		Version 1.7 <br/>
+		- Critical Fix for Application Builder<br/>
+		- Critical Fix for Auto Update Features<br/>
+		<hr />
+		
+		Version 1.6 <br/>
+		- Lots syntax updates and refactoring<br/>
+		- Addition of css/js and jquery assets<br/>
+		- Install from ForgeBox by slug entry<br/>
+		- Lots of updates for setting up interceptors with or without programmatic config<br/>
+		<hr />
+		
+		Version 1.5 <br/>
+		- Updated the application templates<br/>
+		- Updated the modules templates <br/>
+		- Auto-Update features<br/>
+		<hr />
+		
+		Version 1.4 <br/>
+		- Updated Application template versions<br/>
+		- Lots of syntax updates and fixes<br/>
+		- Compatiblity of generated content to ColdBox 3.0.0<br/>
+		- Ability to generate coldbox modules<br/>
+		<hr />
+		
+		Version 1.3 <br/>
+		- Integration test generations <br/>
+		- ColdBox 3.0.0 updates to several locations<br/>
+		<hr />
+		
+		Version 1.2 <br/>
+		- Fix for security interceptor generation <br/>
+		- Better handling of persistence setup for plugins and model objects <br/>
+		<hr />
+		
+		Version 1.1 <br/>
+		- Updates of application templates <br/>
+		- Addition of Deploy Interceptor Configuration <br/>
+		- Addition of Security Interceptor Configuration <br/>
+		- Additon of Environment Control Configuration <br/>
+		- Added Reactor ORM Configuration <br/>
+		- Added Transfer ORM Configuration <br/>
+		- Added callback features <br/>
+		- Added rewrite configurations <br/>
+	]]></description>	
+	<version>2.4</version>
+	<license> Copyright since [2009] [Ortus Solutions, Corp - Luis Majano]
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.</license>
+    
+	<menucontributions >
+
+		<contribution target="projectview">
+			<!--  ColdBox Menu -->
+			<menu name="ColdBox Platform">
+				<!-- Global Actions -->
+				<action name="New Application"	handlerid="GenSkeleton"		showResponse="true">
+					<filters>
+						<filter type="project" />
+						<filter type="folder" />
+					</filters>
+				</action>
+				<action name="New Handler" 		handlerid="GenHandler"		showResponse="true">
+					<filters><filter type="folder" /></filters>
+				</action>
+				<action name="New Plugin" 		handlerid="GenPlugin"		showResponse="true">
+					<filters><filter type="folder" /></filters>
+				</action>
+				<action name="New Model" 		handlerid="GenModel"		showResponse="true">
+					<filters><filter type="folder" /></filters>
+				</action>
+				<action name="New Interceptor" 	handlerid="GenInterceptor"	showResponse="true">
+					<filters><filter type="folder" /></filters>
+				</action>
+				<action name="New Integration Test" 	handlerid="GenIntegrationTest"	showResponse="true">
+					<filters><filter type="folder" /></filters>
+				</action>
+				<action name="New Module" 	handlerid="GenModule"	showResponse="true">
+					<filters><filter type="folder" /></filters>
+				</action>
+				
+				<!-- ORM -->
+				<menu name="ORM">
+					<action name="New ORM Event Handler" 	handlerid="GenORMEventHandler"	showResponse="true">
+						<filters><filter type="folder" /></filters>
+					</action>
+					<action name="New Virtual Entity Service" 	handlerid="GenVirtualEntityService"	showResponse="true">
+						<filters><filter type="folder" /></filters>
+					</action>
+					<action name="New Templated ORM Service" 	handlerid="GenTemplatedEntityService"	showResponse="true">
+						<filters><filter type="folder" /></filters>
+					</action>
+				</menu>
+				
+				<!--Project Only Actions-->
+				<action name="Setup URL Rewrites" 	handlerid="GenRewrites"	showResponse="true">
+					<filters><filter type="project" /></filters>
+				</action>
+				<action name="Setup Project ColdBox Variable Mappings" 	handlerid="GenVariableMappings"	showResponse="true">
+					<filters><filter type="project" /></filters>
+				</action>
+				
+				<!-- Config Folder Aspects -->
+				<menu name="Setup Aspects">
+					<filters><filter type="folder" pattern="config" /></filters>
+					<action name="Setup Deploy Interceptor" 	handlerid="GenDeploy"	showResponse="true"></action>
+					<action name="Setup Security Interceptor" 	handlerid="GenSecurity"	showResponse="true"></action>
+					<action name="Setup Environment Control" 	handlerid="GenEnvironments"	showResponse="true"></action>
+					<action name="Setup Transfer ORM" 	handlerid="GenTransfer"	showResponse="true"></action>
+					<action name="Setup Reactor ORM" 	handlerid="GenReactor"	showResponse="true"></action>
+				</menu>
+				
+				<!-- Divider -->
+				<action name="----------------------------------"></action>
+				
+				<!-- Resources -->
+				<menu name="Resources">
+					<action name="ColdBox Live Search" 	handlerid="ColdBoxSearch"	showResponse="true"></action>
+					<action name="ColdBox Live API" 	handlerid="ColdBoxAPI"	showResponse="true"></action>
+					<action name="Extension Help" 	handlerid="ExtensionHelp"	showResponse="true"></action>
+				</menu>
+				
+				<!--AutoUpdate -->
+				<action name="Check For Extension Updates..." 	handlerid="AutoUpdateCheck"	showResponse="true"></action>
+			</menu>
+			
+			<!-- ForgeBox Menu -->
+			<menu name="ColdBox ForgeBox">
+				<filters>
+					<filter type="folder" />
+					<filter type="project" />
+				</filters>
+				
+				<!-- ForgeBox -->
+				<action name="Install From ForgeBox..." 	handlerid="ForgeBoxInstall"	showResponse="true"></action>
+			</menu>
+		</contribution>
+		
+		<!--  Editor  -->
+		<contribution target="editor">
+			<menu name="WireBox DI">
+				<action name="Property Injection" 	handlerid="WireBoxPropertyInjection"	showResponse="true"></action>
+				<action name="Setter Injection" 	handlerid="WireBoxSetterInjection"		showResponse="true"></action>
+			</menu>
+			<menu name="ColdBox Platform">
+				<action name="Generate Implicit Handler Methods" handlerid="GenImplicitHandlerMethods" showResponse="true"></action>
+			</menu>
+		</contribution>
+		
+		<!--  Outline View -->
+		<contribution target="outlineview">
+			<menu name="ColdBox Platform">
+				<action name="Generate Implicit Actions" handlerid="GenImplicitActions" showResponse="true">
+					<filters> 
+						<filter type="cffunction" />
+					</filters>
+				</action>
+			</menu>
+		</contribution>
+
+    </menucontributions>	
+
+	<!-- Project Creation Events -->
+	<events>
+		<event type="onprojectcreate" handlerid="GenSkeleton" />
+	</events>	
+	
+	<handlers>		
+		<!-- Generators -->
+		<handler id="GenHandler"			type="CFM" filename="HandlerSetup.cfm" />
+		<handler id="GenPlugin"				type="CFM" filename="PluginSetup.cfm" />
+		<handler id="GenSkeleton"			type="CFM" filename="AppSkeleton.cfm" />
+		<handler id="GenModel"	    		type="CFM" filename="ModelSetup.cfm" />
+		<handler id="GenDeploy"	    		type="CFM" filename="DeploySetup.cfm" />
+		<handler id="GenSecurity"    		type="CFM" filename="SecuritySetup.cfm" />		
+		<handler id="GenInterceptor"		type="CFM" filename="InterceptorSetup.cfm" />
+		<handler id="GenEnvironments"		type="CFM" filename="EnvironmentSetup.cfm" />
+		<handler id="GenTransfer"			type="CFM" filename="TransferSetup.cfm" />
+		<handler id="GenReactor"			type="CFM" filename="ReactorSetup.cfm" />
+		<handler id="GenRewrites"			type="CFM" filename="RewriteSetup.cfm" />
+		<handler id="GenModule"				type="CFM" filename="ModuleSetup.cfm" />
+		<handler id="GenIntegrationTest" 	type="CFM" filename="IntegrationTestSetup.cfm" />
+		<handler id="GenVariableMappings"	type="CFM" filename="VariableMappings.cfm" />
+		
+		<!-- Editor Handlers -->
+		<handler id="GenImplicitHandlerMethods"		type="CFM" filename="editor/ImplicitHandlerMethodsSetup.cfm" />
+		
+		<!-- Outline Handlers -->
+		<handler id="GenImplicitActions"		type="CFM" filename="outline/ImplicitActionsSetup.cfm" />
+		
+		<!-- ORM -->
+		<handler id="GenORMEventHandler" type="CFM" filename="orm/ORMEventHandlerSetup.cfm" />
+		<handler id="GenVirtualEntityService" type="CFM" filename="orm/VirtualEntityServiceSetup.cfm" />
+		<handler id="GenTemplatedEntityService" type="CFM" filename="orm/TemplatedEntityServiceSetup.cfm" />
+		
+		<!-- AutoUpdate -->
+		<handler id="AutoUpdateCheck" type="CFM" filename="AutoUpdateCheck.cfm" />
+		
+		<!-- Resources -->
+		<handler id="ExtensionHelp" type="CFM" filename="resources/ExtensionHelp.cfm" />
+		<handler id="ColdBoxAPI" 	type="CFM" filename="resources/ColdBoxAPI.cfm" />
+		<handler id="ColdBoxSearch" type="CFM" filename="resources/ColdBoxSearch.cfm" />
+		
+		<!-- ForgeBox -->
+		<handler id="ForgeBoxInstall" type="CFM" filename="forgebox/ForgeBoxInstall.cfm" />
+		
+		<!-- WireBox -->
+		<handler id="WireBoxPropertyInjection" 		type="CFM" filename="wirebox/WireBoxPropertyInjection.cfm" />
+		<handler id="WireBoxSetterInjection" 		type="CFM" filename="wirebox/WireBoxSetterInjection.cfm" />
+		<handler id="WireBoxComponentPersitence" 	type="CFM" filename="wirebox/WireBoxComponentPersitence.cfm" />
+		
+	</handlers>
+
+</application>
