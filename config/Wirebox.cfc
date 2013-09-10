@@ -52,13 +52,18 @@ Description :
 			//Declaring the Logbox Configuration Binder
 			logBoxConfig = 'config.lbConfig'			
 		};
-		
+		wirebox.cacheBox = {
+		enabled = true, 
+		configFile = "wirebox.system.cache.config.DefaultConfiguration", //An optional configuration file to use for loading CacheBox
+		cacheFactory = "", //A reference to an already instantiated CacheBox CacheFactory
+		classNamespace = "wirebox.system.cache" //A class path namespace to use to create CacheBox: Default=coldbox.system.cache or wirebox.system.cache
+		};
 		// Map Bindings below
 		map("myDSN").toValue("cfartgallery");
 		map("KoolArt").to("model.art");
 		map("latestNews")
 	    .toRSS("http://news.google.com/news?output=rss");
-		map("cachebox").to("wirebox.system.cache.CacheFactory").init("wirebox.cache.config.CacheBoxConfig",false);
+		//map("cachebox").to("wirebox.system.cache.CacheFactory").init("wirebox.cache.config.DefaultConfiguration",false);
 		
 				              
 		//Let's do some AOP
