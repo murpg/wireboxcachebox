@@ -58,11 +58,15 @@ Description :
 		cacheFactory = "", //A reference to an already instantiated CacheBox CacheFactory
 		classNamespace = "wirebox.system.cache" //A class path namespace to use to create CacheBox: Default=coldbox.system.cache or wirebox.system.cache
 		};
+		mapDirectory("model");
 		// Map Bindings below
 		map("myDSN").toValue("cfartgallery");
 		map("KoolArt").to("model.art");
+		
 		map("latestNews")
-	    .toRSS("http://news.google.com/news?output=rss");
+	    .toRSS("http://news.google.com/news?output=rss")
+	    .asEagerInit()
+	    .inCacheBox(timeout=20,lastAccessTimeout=30,provider="default",key="google-news");
 		//map("cachebox").to("wirebox.system.cache.CacheFactory").init("wirebox.cache.config.DefaultConfiguration",false);
 		
 				              
