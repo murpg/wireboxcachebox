@@ -3,11 +3,10 @@
 
 
 
-<cfset obj = application.wirebox.getInstance('CacheBinService').getCachedItems('artGateway-key', 'artGateway') />
+<cfset obj = application.wirebox.getInstance('CacheBinService').getCachedItems('google-key', 'latestnews') />
 
 
-<cfdump var="#obj.getByAttributesQuery()#">
 
-<!---<cfloop query="obj.items">
-<cfoutput>#obj.items.content[currentrow]#</cfoutput>
-</cfloop>--->
+<cfloop query="obj.items">
+<cfoutput>#obj.items.content[currenrow]#</cfoutput>
+</cfloop>
