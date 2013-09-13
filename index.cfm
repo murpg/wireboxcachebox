@@ -1,4 +1,4 @@
-﻿<cfoutput>#DateFormat( Now(), "medium" )#</cfoutput><br>
+﻿<cfoutput>#DateFormat( Now(), 'MM DD, YYYY' )#</cfoutput><br>
 <a href="Reset.cfm">Reset</a>
 
 
