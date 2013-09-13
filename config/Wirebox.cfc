@@ -66,7 +66,7 @@ Description :
 		map("latestNews")
 	    .toRSS("http://news.google.com/news?output=rss")
 	    .asEagerInit()
-	    .inCacheBox(timeout=20,lastAccessTimeout=30,provider="default",key="google-news");
+	    .inCacheBox(timeout=20,lastAccessTimeout=30,provider="default",key="google-key");
 		//map("cachebox").to("wirebox.system.cache.CacheFactory").init("wirebox.cache.config.DefaultConfiguration",false);
 		
 				              

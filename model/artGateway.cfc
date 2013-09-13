@@ -1,4 +1,4 @@
-﻿<cfcomponent displayname="artGateway" output="false">
+<cfcomponent displayname="artGateway" output="false">
 <cfproperty name="dsn" inject="ID:myDSN" scope="instance">
 	<cffunction name="init" access="public" output="false" returntype="artGateway">
 		<cfreturn this />
@@ -16,16 +16,16 @@
 		<cfargument name="orderby" type="string" required="false" />
 		
 		<cfset var qList = "" />		
-		<cfquery name="qList" datasource="#instance.dsn#">
+		<cfquery name="qList" datasource="#instance.dsn#" cachedWithin="#createTimespan(7, 0, 0, 0)#">
 			SELECT	
-ARTID,
-ARTISTID,
-ARTNAME,
-DESCRIPTION,
-PRICE,
-LARGEIMAGE,
-MEDIAID,
-ISSOLD
+			ARTID,
+			ARTISTID,
+			ARTNAME,
+			DESCRIPTION,
+			PRICE,
+			LARGEIMAGE,
+			MEDIAID,
+			ISSOLD
 			FROM	ART
 			WHERE		0=0
 		<cfif structKeyExists(arguments,"ARTID") and len(arguments.ARTID)>
