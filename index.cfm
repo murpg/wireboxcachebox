@@ -3,10 +3,8 @@
 
 
 
-<cfset obj = application.wirebox.getInstance('CacheBinService').getCachedItems('google-key', 'latestnews') />
-
-
+<cfset obj = application.wirebox.getInstance('CacheBinService').getCachedItems('google-z', 'latestnews') />
 
 <cfloop query="obj.items">
-<cfoutput>#obj.items.content[currenrow]#</cfoutput>
+<cfoutput>#obj.items.content[currentrow]#</cfoutput>
 </cfloop>

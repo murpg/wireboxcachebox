@@ -109,7 +109,7 @@ component extends="wirebox.system.orm.hibernate.BaseORMService" accessors="true"
 		return super.findAllWhere(this.getEntityName(), arguments.criteria, arguments.sortOrder);
 	}
 
-	any function new(struct properties=structnew()){
+	any function new(struct properties=structnew(), boolean composeRelationships=true, nullEmptyInclude="", nullEmptyExclude="", boolean ignoreEmpty=false, include="", exclude=""){
 		arguments.entityName = this.getEntityName();
 		return super.new(argumentCollection=arguments);
 	}
@@ -209,6 +209,24 @@ component extends="wirebox.system.orm.hibernate.BaseORMService" accessors="true"
 		
 		arguments.entityName = this.getEntityName();
 		return super.newCriteria(argumentCollection=arguments);
+	}
+	
+	/**
+	* Coverts an ID, list of ID's, or array of ID's values to the proper java type
+	* The method returns a coverted array of ID's
+	*/
+	any function convertIDValueToJavaType(required id){
+		arguments.entityName = this.getEntityName();
+		return super.convertIDValueToJavaType(argumentCollection=arguments);
+	}
+	
+	/**
+	* Coverts a value to the correct javaType for the property passed in
+	* The method returns the value in the proper Java Type
+	*/
+	any function convertValueToJavaType(required propertyName, required value){
+		arguments.entityName = this.getEntityName();
+		return super.convertValueToJavaType(argumentCollection=arguments);
 	}
 	
 	/**
