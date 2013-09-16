@@ -3,7 +3,7 @@
     output = false
 
 {
-	property name="cachetwo" inject="cachebox:cache";
+	//property name="cachetwo" inject="cachebox:cache";
 
 	public function getCachedItems( required string cachekey, required string wbalias )
 
