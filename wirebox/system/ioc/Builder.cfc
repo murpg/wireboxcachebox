@@ -1,4 +1,4 @@
-﻿<!-----------------------------------------------------------------------
+<!-----------------------------------------------------------------------
 ********************************************************************************
 Copyright Since 2005 ColdBox Framework by Luis Majano and Ortus Solutions, Corp
 www.coldbox.org | www.luismajano.com | www.ortussolutions.com
@@ -16,8 +16,8 @@ TODO: update dsl consistency, so it is faster.
 <!----------------------------------------- CONSTRUCTOR ------------------------------------->			
 		
 	<!--- init --->
-	<cffunction name="init" access="public" returntype="Builder" hint="Constructor. If called without a configuration binder, then WireBox will instantiate the default configuration binder found in: wirebox.system.ioc.config.DefaultBinder" output="false" >
-		<cfargument name="injector" type="any" required="true" hint="The linked WireBox injector" colddoc:generic="wirebox.system.ioc.Injector"/>
+	<cffunction name="init" access="public" returntype="Builder" hint="Constructor. If called without a configuration binder, then WireBox will instantiate the default configuration binder found in: coldbox.system.ioc.config.DefaultBinder" output="false" >
+		<cfargument name="injector" type="any" required="true" hint="The linked WireBox injector" colddoc:generic="coldbox.system.ioc.Injector"/>
 		<cfscript>
 			instance = {
 				injector 	= arguments.injector,
@@ -29,7 +29,7 @@ TODO: update dsl consistency, so it is faster.
 			
 			// Do we need to build the coldbox DSL namespace
 			if( instance.injector.isColdBoxLinked() ){
-				instance.coldboxDSL = createObject("component","wirebox.system.ioc.dsl.ColdBoxDSL").init( arguments.injector );
+				instance.coldboxDSL = createObject("component","coldbox.system.ioc.dsl.ColdBoxDSL").init( arguments.injector );
 			}
 			// Is CacheBox Linked?
 			if( instance.injector.isCacheBoxLinked() ){
@@ -82,7 +82,7 @@ TODO: update dsl consistency, so it is faster.
 	
 	<!--- buildCFC --->
     <cffunction name="buildCFC" output="false" access="public" returntype="any" hint="Build a cfc class via mappings">
-    	<cfargument name="mapping" 			required="true" 	hint="The mapping to construct" colddoc:generic="wirebox.system.ioc.config.Mapping">
+    	<cfargument name="mapping" 			required="true" 	hint="The mapping to construct" colddoc:generic="coldbox.system.ioc.config.Mapping">
     	<cfargument name="initArguments" 	required="false"	default="#structnew()#" 	hint="The constructor structure of arguments to passthrough when initializing the instance" colddoc:generic="struct"/>
 		<cfscript>
 			var thisMap 		= arguments.mapping;
@@ -131,7 +131,7 @@ TODO: update dsl consistency, so it is faster.
 	
 	<!--- buildFactoryMethod --->
     <cffunction name="buildFactoryMethod" output="false" access="public" returntype="any" hint="Build an object using a factory method">
-    	<cfargument name="mapping" 			required="true" hint="The mapping to construct" colddoc:generic="wirebox.system.ioc.config.Mapping">
+    	<cfargument name="mapping" 			required="true" hint="The mapping to construct" colddoc:generic="coldbox.system.ioc.config.Mapping">
     	<cfargument name="initArguments" 	required="false"	default="#structnew()#" 	hint="The constructor structure of arguments to passthrough when initializing the instance" colddoc:generic="struct"/>
 		<cfscript>
     		var thisMap 	= arguments.mapping;
@@ -166,7 +166,7 @@ TODO: update dsl consistency, so it is faster.
 
 	<!--- buildJavaClass --->
     <cffunction name="buildJavaClass" output="false" access="public" returntype="any" hint="Build a Java class via mappings">
-    	<cfargument name="mapping" 	required="true" hint="The mapping to construct" colddoc:generic="wirebox.system.ioc.config.Mapping">
+    	<cfargument name="mapping" 	required="true" hint="The mapping to construct" colddoc:generic="coldbox.system.ioc.config.Mapping">
     	<cfscript>
 			var x 			= 1;
 			var DIArgs 		= arguments.mapping.getDIConstructorArguments();
@@ -200,7 +200,7 @@ TODO: update dsl consistency, so it is faster.
 	
 	<!--- buildArgumentCollection --->
     <cffunction name="buildArgumentCollection" output="false" access="public" returntype="any" hint="Build arguments for a mapping and return the structure representation">
-    	<cfargument name="mapping" 			required="true"  hint="The mapping to construct" colddoc:generic="wirebox.system.ioc.config.Mapping">
+    	<cfargument name="mapping" 			required="true"  hint="The mapping to construct" colddoc:generic="coldbox.system.ioc.config.Mapping">
     	<cfargument name="argumentArray" 	required="true"  hint="The argument array of data"/>
     	<cfargument name="targetObject" 	required="true"  hint="The target object we are building the DSL dependency for"/>
 		<cfscript>
@@ -253,7 +253,7 @@ TODO: update dsl consistency, so it is faster.
 	
 	<!--- buildWebservice --->
     <cffunction name="buildWebservice" output="false" access="public" returntype="any" hint="Build a webservice object">
-    	<cfargument name="mapping" 			required="true" 	hint="The mapping to construct" colddoc:generic="wirebox.system.ioc.config.Mapping">
+    	<cfargument name="mapping" 			required="true" 	hint="The mapping to construct" colddoc:generic="coldbox.system.ioc.config.Mapping">
     	<cfargument name="initArguments" 	required="false"	default="#structnew()#" 	hint="The constructor structure of arguments to passthrough when initializing the instance" colddoc:generic="struct"/>
 		<cfscript>
     		var argStruct 	= {};
@@ -276,7 +276,7 @@ TODO: update dsl consistency, so it is faster.
 	
 	<!--- buildFeed --->
     <cffunction name="buildFeed" output="false" access="public" returntype="any" hint="Build an rss feed the WireBox way">
-    	<cfargument name="mapping" 	required="true" hint="The mapping to construct" colddoc:generic="wirebox.system.ioc.config.Mapping">
+    	<cfargument name="mapping" 	required="true" hint="The mapping to construct" colddoc:generic="coldbox.system.ioc.config.Mapping">
     	<cfset var results = {}>
 		
     	<cffeed action="read" source="#arguments.mapping.getPath()#" query="results.items" properties="results.metadata" timeout="20">
@@ -310,15 +310,6 @@ TODO: update dsl consistency, so it is faster.
 			var DSLNamespace 		= listFirst(arguments.definition.dsl,":");
 			var coldboxDSLRegex		= "^(ioc|ocm|webservice|javaloader|coldbox|cachebox)$";
 			
-			// coldbox context check
-			if( refindNoCase(coldboxDSLRegex,DSLNamespace) AND NOT instance.injector.isColdBoxLinked() ){
-				instance.utility.throwIt(message="The DSLNamespace: #DSLNamespace# cannot be used as it requires a ColdBox Context",type="Builder.IllegalDSLException");
-			}
-			// cachebox context check
-			else if( refindNoCase("^cachebox",DSLNamespace) AND NOT instance.injector.isCacheBoxLinked() ){
-				instance.utility.throwIt(message="The DSLNamespace: #DSLNamespace# cannot be used as it requires a CacheBox Context",type="Builder.IllegalDSLException");
-			}
-			
 			// Determine Type of Injection according to Internal Types first
 			// Some namespaces requires the ColdBox context, if not found, an exception is thrown.
 			switch( DSLNamespace ){
@@ -327,7 +318,14 @@ TODO: update dsl consistency, so it is faster.
 					refLocal.dependency = instance.coldboxDSL.process(argumentCollection=arguments); break; 
 				} 
 				// CacheBox Context DSL
-				case "cacheBox"			 : { refLocal.dependency = instance.cacheBoxDSL.process(argumentCollection=arguments); break;}
+				case "cacheBox"			 : { 
+					// check if linked
+					if( !instance.injector.isCacheBoxLinked() AND !instance.injector.isColdBoxLinked() ){
+						instance.utility.throwIt(message="The DSLNamespace: #DSLNamespace# cannot be used as it requires a ColdBox/CacheBox Context",type="Builder.IllegalDSLException");
+					}
+					// retrieve it
+					refLocal.dependency = instance.cacheBoxDSL.process(argumentCollection=arguments); break;
+				}
 				// logbox injection DSL always available
 				case "logbox"			 : { refLocal.dependency = instance.logBoxDSL.process(argumentCollection=arguments); break;}
 				// WireBox Internal DSL for models and id
@@ -393,11 +391,11 @@ TODO: update dsl consistency, so it is faster.
 
 			// Do we have an entity name? If we do create virtual entity service
 			if( len(entityName) ){
-				return createObject("component","wirebox.system.orm.hibernate.VirtualEntityService").init( entityName );
+				return createObject("component","coldbox.system.orm.hibernate.VirtualEntityService").init( entityName );
 			}
 
 			// else Return Base ORM Service
-			return createObject("component","wirebox.system.orm.hibernate.BaseORMService").init();
+			return createObject("component","coldbox.system.orm.hibernate.BaseORMService").init();
 		</cfscript>
 	</cffunction>
 
@@ -525,7 +523,7 @@ TODO: update dsl consistency, so it is faster.
 			}
 			
 			// Build provider and return it.
-			return createObject("component","wirebox.system.ioc.Provider").init( argumentCollection=args );
+			return createObject("component","coldbox.system.ioc.Provider").init( argumentCollection=args );
 		</cfscript>
 	</cffunction>
 	

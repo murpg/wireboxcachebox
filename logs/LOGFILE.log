@@ -2,3 +2,5 @@
 "ERROR","LOGFILE","09/03/2013","21:43:01","wirebox.system.ioc.Injector","Requested instance:cachebox was not located in any declared scan location(s): model or full CFC path"
 "ERROR","LOGFILE","09/03/2013","21:45:08","wirebox.system.ioc.Injector","Requested instance:cachebox was not located in any declared scan location(s): model or full CFC path"
 "ERROR","LOGFILE","09/10/2013","06:25:15","wirebox.system.ioc.Injector","Requested instance:cachebox was not located in any declared scan location(s): model or full CFC path"
+"ERROR","LOGFILE","09/16/2013","14:34:44","wirebox.system.ioc.Builder","Target: CacheBinService -> DSL Definition: {JAVACAST={null},NAME={cachetwo},ARGNAME={},DSL={cachebox:cache},REQUIRED={false},SCOPE={variables},VALUE={null},REF={null}} did not produce any resulting dependency"
+"ERROR","LOGFILE","09/16/2013","14:52:19","wirebox.system.ioc.Builder","Target: CacheBinService -> DSL Definition: {JAVACAST={null},NAME={cachetwo},ARGNAME={},DSL={cachebox:cache},REQUIRED={false},SCOPE={variables},VALUE={null},REF={null}} did not produce any resulting dependency"
