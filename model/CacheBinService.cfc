@@ -3,13 +3,14 @@
     output = false
 
 {
-	property name="cachetwo" inject="cachebox:cache";
+	property name="cache" inject="cacheBox:default";
 
 	public function getCachedItems( required string cachekey, required string wbalias )
 
         output = false
 
     {
+
         var obj = cache.get( arguments.cachekey );
 
         if( isNull( obj ) ) {
@@ -32,8 +33,6 @@
             output = false
 
     {
-
-        variables.cache = application.wirebox.getCacheBox().getDefaultCache();
 
         return this;
 
